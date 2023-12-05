@@ -1,0 +1,222 @@
+/* Reset of our form's stylesheet and declaration of our globals styles */
+
+$mainBackground : hsl(235, 18%, 26%);
+$paragraphSize : 16px;
+$formColor : hsl(0, 0%, 100%);
+$darkButton : hsl(234, 29%, 20%);
+$linearGradient : linear-gradient(95deg, #f757ba, #ff8f44);
+
+* 
+{
+    padding: 0;
+}
+
+body
+{
+    
+    display: flex;
+    justify-content: center;
+    background-color: $mainBackground;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 80px;
+    margin-bottom: 80px;
+};
+
+
+p,
+li
+{
+    font-size: $paragraphSize;
+}
+
+li 
+{
+    list-style-type: none;
+}
+
+h1 
+{
+    color: $darkButton;
+    font-size: 50px;
+}
+
+/* Creation of the background form */
+
+.container
+{
+    display: flex;
+    background-color: $formColor;
+    width : 50rem; 
+    height: 30rem;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.cardSuccess
+{
+    background-color: $formColor;
+    display: flex;
+    flex-wrap: wrap;
+    width: 25%;
+    padding: 40px;
+    border-radius: 15px;
+    gap: 20px;
+}
+
+/* Setting Media Queries for Mobile */ 
+
+@media screen and (max-width: 768px){
+    body {
+        margin: 0px;
+        background-color: $formColor;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .photoMobile {
+        width: 100%
+    }
+
+    .cardSuccess {
+        width: 100%;
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 50%;
+    }
+} 
+
+@media screen and (max-width: 820px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .cardSuccess {
+        width: 100%;
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 50%;
+    }
+    
+}
+
+/* Putting styles on button and input */
+
+
+.darkButton 
+{
+    background-color: $darkButton;
+    padding: 10px 75px;
+    border-radius: 8px;
+    color: $formColor;
+    border-style: none;
+    margin-top: 1Opx;
+}
+
+
+.formText 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    padding: 30px;
+}
+
+form
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form,
+ul,
+.email
+{
+    gap: 10px;
+}
+
+.email
+{
+    display: flex;   
+}
+
+input 
+{
+    padding: 10px 100px;
+    border-radius: 8px;
+    border-color: hsl(231, 7%, 60%);
+    border-width: 1px;
+}
+
+/* Adjusting our images SVG to fit */
+
+.iconList
+{
+    display: flex;
+    float: left;
+}
+
+ul
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.photoDesktop
+{
+    contain: content;
+    border-radius: 15px;
+    height: 100%;
+}
+
+/* Stylesheet for the focus and hover states */
+
+.darkButton:hover,
+.darkButton:focus
+{
+    background: $linearGradient;
+}
+
+input,
+.darkButton:hover,
+.darkButton:focus
+{
+    cursor: pointer;
+}
+
+/* Stylesheet for our success card */
+
+.hide 
+{
+     display: none; 
+} 
+
+.cardSuccess > .darkButton
+{
+    width: 100%;
+}
+
+// Adding styles when a error message occurs //
+
+.errorMessage
+{
+    float: right;
+    color: rgb(253, 62, 62);
+    font-size: 12px;
+}
+
+
+
+
